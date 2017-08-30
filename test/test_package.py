@@ -15,14 +15,14 @@ class TestPackage(unittest.TestCase):
         from kafka import client as client2
         self.assertEqual(client2.__name__, "kafka.client")
 
-        from kafka.client import SimpleClient as SimpleClient1
-        self.assertEqual(SimpleClient1.__name__, "SimpleClient")
+        from kafka.client import KafkaClient as KafkaClient1
+        self.assertEqual(KafkaClient1.__name__, "KafkaClient")
+
+        from kafka import KafkaClient as KafkaClient2
+        self.assertEqual(KafkaClient2.__name__, "KafkaClient")
 
         from kafka.codec import gzip_encode as gzip_encode1
         self.assertEqual(gzip_encode1.__name__, "gzip_encode")
-
-        from kafka import SimpleClient as SimpleClient2
-        self.assertEqual(SimpleClient2.__name__, "SimpleClient")
 
         from kafka.codec import snappy_encode
         self.assertEqual(snappy_encode.__name__, "snappy_encode")
